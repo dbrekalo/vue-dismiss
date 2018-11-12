@@ -3,7 +3,7 @@
         <button v-on:click="toggle" type="button" v-bind:class="{opened}">
             {{ opened ? 'Close dropdown' : 'Click to open dropdown' }}
         </button>
-        <div class="content" v-bind:class="{opened}">
+        <div class="dropdownContent" v-bind:class="{opened}">
             <p class="text">
                 Click outside this element or press escape key to close dropdown.
             </p>
@@ -65,9 +65,9 @@ export default {
 
     }
 
-    .content {
+    .dropdownContent {
 
-        margin-top: -30px; padding: 70px 35px 50px !important;
+        margin-top: -30px; padding: 70px 35px 50px;
         border: 1px dashed #c3c3c3; border-radius: 0 0 8px 8px;
         box-shadow: 0 0.2em 2.5em rgba(#000, 0.07);
         background: transparent;
@@ -87,7 +87,7 @@ export default {
 
     .text {
 
-        font-size: 17px; margin: 0 !important; padding: 30px 0;
+        font-size: 17px; margin: 0; padding: 30px 0;
         opacity: 0; transform: translate3d(0,-20px,0);
         transition: all 0.3s;
 
