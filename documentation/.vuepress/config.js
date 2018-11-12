@@ -1,7 +1,7 @@
 module.exports = {
     dest: 'docs',
     title: 'Vue dismiss',
-    base: '/',
+    base: '/vue-dismiss/',
     themeConfig: {
         nav: [
             {text: 'Home', link: '/'},

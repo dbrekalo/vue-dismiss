@@ -52,7 +52,7 @@ export default {
         &:after {
 
             content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 50px;
-            background: transparent url('/arrow.svg') no-repeat center;
+            background: transparent url('/vue-dismiss/arrow.svg') no-repeat center;
             background-size: 20px; transition: transform 0.3s;
 
         }

@@ -12,6 +12,7 @@
     "/dist",
     "/src"
   ],
+  "main": "dist/vueDismiss.js",
   "scripts": {
     "dev": "npm run dev:docs",
     "dev:docs": "vuepress dev documentation",

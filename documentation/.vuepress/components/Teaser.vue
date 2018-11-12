@@ -40,7 +40,7 @@ export default {
 
             min-height: 100vh;
             display: flex; justify-content: center; align-items: center;
-            background: #f5f5f5 url('/cancelWhite.svg') no-repeat right 50px;
+            background: #f5f5f5 url('/vue-dismiss/cancelWhite.svg') no-repeat right 50px;
             background-size: 1050px;
 
         }
