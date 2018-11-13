@@ -3,11 +3,15 @@ const elementKeyupKey = '_vueDismissKeyup';
 
 function setup(el, binding) {
 
-    const {callback, watch} = binding.value;
+    const callback = binding.value.callback;
+    const shouldBind = binding.value.hasOwnProperty('watch')
+        ? Boolean(binding.value.watch)
+        : true
+    ;
 
-    if (watch && typeof document !== 'undefined') {
+    if (shouldBind) {
 
-        if (!el[elementClickKey]) {
+        if (typeof document !== 'undefined' && !el[elementClickKey]) {
 
             const handler = function(event) {
 

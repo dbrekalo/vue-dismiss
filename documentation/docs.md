@@ -11,7 +11,7 @@ npm install vue-dismiss
 # Example and api
 Vue dismiss ads "v-on-dismiss" custom directive for your Vue components with following parameters:
 - callback: function to call on dismiss event
-- watch: component property directive is watching. Will bind or unbind bind event listeners based on property value.
+- watch: component property directive is watching (optional). Will bind or unbind bind event listeners based on property value.
 
 Register directive by adding it to mixins array in your component.
 
