@@ -36,12 +36,17 @@ export default {
         background: #f5f5f5;
         // border-bottom: 1px solid #e8e8e8;
 
+        @media screen and (max-width: 720px) {
+            cursor: pointer;
+        }
+
         @media screen and (min-width: 720px) {
 
             min-height: 100vh;
             display: flex; justify-content: center; align-items: center;
             background: #f5f5f5 url('/vue-dismiss/cancelWhite.svg') no-repeat right 50px;
             background-size: 1050px;
+            cursor: auto;
 
         }
     }
