@@ -3,11 +3,18 @@ const elementKeyupKey = '_vueDismissKeyup';
 
 function setup(el, binding) {
 
-    const callback = binding.value.callback;
-    const shouldBind = binding.value.hasOwnProperty('watch')
-        ? Boolean(binding.value.watch)
-        : true
-    ;
+    let callback, shouldBind;
+
+    if (typeof binding.value === 'function') {
+        callback = binding.value;
+        shouldBind = true;
+    } else {
+        callback = binding.value.callback;
+        shouldBind = binding.value.hasOwnProperty('watch')
+            ? Boolean(binding.value.watch)
+            : true
+        ;
+    }
 
     if (shouldBind) {
 

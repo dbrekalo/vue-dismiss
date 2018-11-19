@@ -1,13 +1,8 @@
 <template>
-    <div
-        class="dropdown"
-        v-on-dismiss="{watch: opened, callback: close}"
-    >
+    <div v-on-dismiss="{watch: opened, callback: close}">
         <button v-on:click="toggle" type="button" v-bind:class="{opened}">
             Toggle dropdown
         </button>
-        <div class="content" v-bind:class="{opened}">
-        </div>
     </div>
 </template>
 
