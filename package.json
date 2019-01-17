@@ -1,6 +1,6 @@
 {
   "name": "vue-dismiss",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vue directive for executing closing logic when something outside component element is clicked or when escape key is pressed",
   "homepage": "https://dbrekalo.github.io/vue-dismiss/",
   "repository": {
