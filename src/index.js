@@ -24,7 +24,7 @@ function setup(el, binding) {
 
                 if (event.keyCode) {
                     event.keyCode === 27 && callback();
-                } else if (!(event.target === el) && !el.contains(event.target)) {
+                } else if (!(event.target === el) && !el.contains(event.target) && isMounted(event.target)) {
                     callback();
                 }
 
@@ -45,6 +45,12 @@ function setup(el, binding) {
 
     }
 
+}
+
+function isMounted(node) {
+    if (node.nodeType === Node.DOCUMENT_NODE) return true;
+    if (node.parentNode == undefined) return false;
+    return isMounted(node.parentNode);
 }
 
 function unbind(el) {
