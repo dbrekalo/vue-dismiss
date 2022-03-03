@@ -1,5 +1,6 @@
 const elementClickKey = '_vueDismissClick';
 const elementKeyupKey = '_vueDismissKeyup';
+const elementTimeoutKey = '_vueDismissTimeout';
 
 function setup(el, binding) {
 
@@ -21,16 +22,23 @@ function setup(el, binding) {
         if (typeof document !== 'undefined' && !el[elementClickKey]) {
 
             const handler = function(event) {
-
                 if (event.keyCode) {
-                    event.keyCode === 27 && callback();
-                } else if (!(event.target === el) && !el.contains(event.target)) {
+                    if (event.keyCode === 27) {
+                        callback();
+                    }
+                } else if (
+                    !(event.target === el) &&
+                    !el.contains(event.target)
+                ) {
                     callback();
                 }
-
             };
 
-            setTimeout(function() {
+            if (el[elementTimeoutKey]) {
+                clearTimeout(el[elementTimeoutKey]);
+            }
+
+            el[elementTimeoutKey] = setTimeout(function() {
                 document.addEventListener('click', handler);
                 document.addEventListener('keyup', handler);
             }, 10);
@@ -54,6 +62,10 @@ function unbind(el) {
         document.removeEventListener('keyup', el[elementKeyupKey]);
         delete el[elementClickKey];
         delete el[elementKeyupKey];
+        if (el[elementTimeoutKey]) {
+            clearTimeout(el[elementTimeoutKey]);
+            delete el[elementTimeoutKey];
+        }
     }
 
 }
